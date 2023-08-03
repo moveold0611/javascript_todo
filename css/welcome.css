@@ -1,0 +1,34 @@
+.welcome-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.welcome-page-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    font-weight: 700;
+    text-shadow: 0px 0px 10px orange;
+    color: black;
+    cursor: default;
+}
+
+.write-link-button {
+    transition: 0.3s ease;
+    border: none;
+    background-color: none;
+    text-shadow: 0px 0px 15px orange;
+    font-size: 18px;
+    color: black;
+}
+
+.write-link-button:hover {
+    text-shadow: 0px 0px 15px orangered;
+}
+
+.write-link-button:active {
+    text-shadow: 0px 0px 15px rgb(247, 8, 0);
+}

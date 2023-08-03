@@ -3,7 +3,7 @@
     position: absolute;
     left: -200px;
     top : 0px;
-    border-right: 1px solid;
+    border-right: 1px solid #222;
     border-radius: 4px;
     width: 200px;
     height: 100%;
@@ -14,7 +14,7 @@
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
-    right: -16px;
+    right: -14px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,12 +38,13 @@
 .sidebarlogo {
     padding: 10px;
     /* margin-bottom: 10px; */
+    margin-bottom: 10px;
     border-bottom: 2px solid white;
     justify-content: center;
     align-items: center;
     display: flex;
-    height: 80px;
-    background-color: #111;
+    height: 60px;
+    background-color: #444;
     /* linear-gradient(to bottom right, 색상1, 색상2)  그라데이션 효과 */
     font: 20px;
     font-weight: 700;
@@ -54,7 +55,7 @@
     justify-content: center;
     align-items: center;
     border-bottom   : 1px solid white;
-    background-color: #222;
+    background-color: #444;
     padding: 10px 2px;
     height: 40px;
     font-size: 12px;
@@ -63,11 +64,11 @@
 }
 
 .menu-items:hover {
-    background-color: #111;
+    background-color: #333;
 }
 .menu-items:active {
-    background-color: black;
+    background-color: #222;
 }
-.isMenuSelected {
-    background-color: #111;
-}
+/* .isMenuSelected {
+   
+} */
