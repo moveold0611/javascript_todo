@@ -5,7 +5,7 @@
 
 .todolist-page-container > header{
     margin-bottom: 15px;
-    border-bottom: 1px solid #444;
+    border-bottom: 1px solid #c9ad9a;
 }
 
 .todolist-header-items {
@@ -37,30 +37,39 @@
     border-width: 1px 0px;
     padding: 10px;
     width: 100%;
-    background-color: #444;
+    background-color: #c9ad9a;
 }
 
 .complet-chkboxs {
     display: none;
 }
 
+.complet-chkboxs:checked + label::after {
+    content: " ";
+    border-radius: 2px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(153, 70, 70);
+}
+
+
 .complet-chkboxs + label {
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid #444;
+    border: 1px solid black;
     border-radius: 4px;
     width: 20px;
     height: 20px;
-
 }
+
 
 .complet-chkboxs + label::after {
     content: " ";
     border-radius: 2px;
     width: 10px;
     height: 10px;
-    background-color: gray;
+    background-color: #c9ad9a;
 }
 
 .item-center {

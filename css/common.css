@@ -2,7 +2,7 @@
     box-sizing: border-box;
     font-size: 14px;
     color: black;
-    background-color: #444;
+    background-color: #c9ad9a;
 }
 
 .container { 
@@ -13,7 +13,7 @@
     padding: 10px;
     width: 500px;
     height: 700px;
-    background-color: #111;
+    background-color: rgb(46, 25, 6);
     overflow: hidden;
 }
 
@@ -45,11 +45,11 @@
     border: 1px solid black;
     padding: 5px 20px;
     border-radius: 4px;
-    background-color: #383838;
+    background-color: #f1d8c8;
 }
 
 .text-input:focus {
-    outline: 1px solid orange;
+    outline: 1px solid rgb(192, 62, 62);
 }
 
 .w-f {

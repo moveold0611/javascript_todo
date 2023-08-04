@@ -1,0 +1,73 @@
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #c9ad9abb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.modal-title {
+    font-weight: 700;
+    font-size: 14px;
+    text-align: center;
+}
+
+
+
+.modal-container {
+    border: 2px solid black;
+    background-color: #c9ad9a;
+    border-radius: 4px;
+}
+
+.modal-header {
+    border-bottom: 1px solid black;
+    padding: 15px 20px;
+    min-width: 300px;
+}
+
+.modal-message {
+    width: 100%;
+    align-items: center;
+    font-size: 13px;
+    word-wrap: break-word;
+}
+
+
+.modal-main {
+    display: flex;  
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+    padding: 20px 20px;
+    min-width: 300px;
+}
+
+.modal-main > *:not(.modal-main :nth-last-child(1)) {
+    margin-bottom: 10px;
+}
+
+.modal-input {
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 5px 20px;
+    min-width: 300px;
+}
+
+.modal-footer .btn:not(.modal-footer .btn:nth-last-child(1)) {
+    margin-right: 5px;
+}

@@ -7,7 +7,7 @@
     border-radius: 4px;
     width: 200px;
     height: 100%;
-    background-color: #222;
+    background-color: #b89d8b;
 }
 
 .sidebar-toggle-button {
@@ -19,12 +19,12 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    border: 1px solid #dbdbdb;
+    border: 1px solid rgb(46, 25, 6);
     border-top-right-radius: 4px;
     border-bottom-right-radius: 4px;
     padding: 3px 1px;
     font-size: 10px;
-    background-color: #222;
+    background-color: #887263;
     cursor: pointer;
 }
 .sidebar-toggle-button:active {
@@ -39,12 +39,12 @@
     padding: 10px;
     /* margin-bottom: 10px; */
     margin-bottom: 10px;
-    border-bottom: 2px solid white;
+    border-bottom: 2px solid rgb(46, 25, 6);
     justify-content: center;
     align-items: center;
     display: flex;
     height: 60px;
-    background-color: #444;
+    background-color: #b89d8b;
     /* linear-gradient(to bottom right, 색상1, 색상2)  그라데이션 효과 */
     font: 20px;
     font-weight: 700;
@@ -54,8 +54,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom   : 1px solid white;
-    background-color: #444;
+    border-bottom   : 1px solid rgb(46, 25, 6);
+    background-color: #d1a88e;
     padding: 10px 2px;
     height: 40px;
     font-size: 12px;
@@ -64,10 +64,10 @@
 }
 
 .menu-items:hover {
-    background-color: #333;
+    background-color: #9b8576;
 }
 .menu-items:active {
-    background-color: #222;
+    background-color: #a18b7b;
 }
 /* .isMenuSelected {
    
