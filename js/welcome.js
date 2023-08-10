@@ -1,4 +1,4 @@
-const goToWriteOnClickButton = () => {
-    Routes.getInstance().routeState = "todolist";
+const goToWriteOnClickHandle = () => {
+    Routes.getInstance().routeStatus = "todolist";
     Routes.getInstance().show();
-};
+} 

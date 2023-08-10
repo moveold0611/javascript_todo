@@ -10,37 +10,49 @@ const closeModal = () => {
 }
 
 const modifySubmitButtonOnClick = (id) => {
-    const newTodoContent = document.querySelector(".modal-main .text-input").value;
+    const newContent = document.querySelector(".modal-main-text-input").value;
+    const newDate = document.querySelector(".modal-date-modify").value;
     const todo = TodoListService.getInstance().getTodoById(id);
-    if(todo.todoContent === newTodoContent || !newTodoContent) {
-        return;
-    }
-    const todoObj = {
+
+    var date = TodoListService.getInstance().todoDateByYmd(newDate);
+
+    const newTodo = {
         ...todo,
-        todoContent: newTodoContent
+        content: newContent,
+        year: date[0],
+        month: date[1],
+        day: date[2]
     }
-    TodoListService.getInstance().setTodo(todoObj);
-};
-    
-function modifyModal(todo) {
+    TodoListService.getInstance().setTodo(newTodo);
+
     const modal = document.querySelector(".modal");
+    modal.classList.add("invisible");
+    modal.innerHTML = "";
+}
+
+
+const modifyModal = (todo) => {
+    const modal = document.querySelector(".modal");
+    const todoDate = TodoListService.getInstance().ymdByTodo(todo);
     modal.innerHTML = `
-        <div class="modal-container">
+    <div class="modal-container">
+        <div class="modal-container-top">
             <header class="modal-header">
                 <h1 class="modal-title">
-                    ToDo 수정
+                    일정 수정
                 </h1>
             </header>
-            <main class="modal-main">
-                <p class="modal-message">
-                    ToDo를 수정해주세요.
-                </p>
-                <input type="text" class="text-input w-f" value="${todo.todoContent}">
-            </main>
-            <footer class="modal-footer">
-                <button class="btn" onclick="modifySubmitButtonOnClick(${todo.id}); closeModal();">확인</button>
-                <button class="btn" onclick="closeModal();">닫기</button>
-            </footer>
         </div>
-    `;
+
+        <div class="modal-container-main">
+            <input type="text" class="text-input w-f modal-main-text-input" value="${todo.content}">                 
+        </div>
+        <div class="modal-container-foot">
+            <input type="date" class="modal-date-modify" value="${todoDate}">
+            <div class="modal-foot-btn">
+                <button class="btn" value="${todo.id}" onclick="modifySubmitButtonOnClick(this.value)">확인</button>
+                <button class="btn" onclick="closeModal();">닫기</button>
+            </div>
+        </div>
+    </div>`;
 }

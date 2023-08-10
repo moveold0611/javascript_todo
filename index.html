@@ -3,94 +3,102 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ToDo</title>
-    <link rel="stylesheet" href="./css/reset.css">
+    <title>todolist</title>
     <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/sidebar.css">
     <link rel="stylesheet" href="./css/welcome.css">
     <link rel="stylesheet" href="./css/todolist.css">
+    <link rel="stylesheet" href="./css/calendar.css">
     <link rel="stylesheet" href="./css/modal.css">
+
 </head>
 <body>
-    <div id="root">
+    <div class="root">
+        <header class="root-header">To Do List</header>
         <div class="container">
             <aside class="sidebar">
-                <button class="sidebar-toggle-button" onclick="sidebarToggleButtonOnClickHandle()">▶</button>
-                <h1 class="sidebarlogo">MYTODO</h1>
+                <button class="sidebar-toggle-button" onclick="sidebarToggleButtonOnClickHandle();">▶</button>
+                <h1 class="sidebar-title">ToDoList</h1>
                 <ul class="sidebar-menu-list">
-                    <li class="menu-items isMenuSelected" onclick="sidebarMenuOnClickHandle(this)">시작하기</li>
-                    <li class="menu-items" onclick="sidebarMenuOnClickHandle(this)">TODOLIST</li>
+                    <li class="menu-items open-welcome-page" onclick="sidebarMenuOnClickHandle(this);">메인메뉴</li>
+                    <li class="menu-items" onclick="sidebarMenuOnClickHandle(this);">ToDoList</li>
+                    <li class="menu-items" onclick="sidebarMenuOnClickHandle(this);">캘린더</li>
                 </ul>
-            </aside>
+            </aside> <!-- sidebar -->
+        
             <main class="main-container">
+
+
                 <div class="welcome-page-container">
-                    <h1 class="welcome-page-title">TODOLIST</h1>
-                    <button class="write-link-button" onclick="goToWriteOnClickButton();">Go to Write</button>
+                    <h1 class="welcomepage-title">어서오세요</h1>
+                    <button class="go-to-write-button" onclick="goToWriteOnClickHandle();">Go to Write</button>
                 </div>
+
+
+
                 <div class="todolist-page-container invisible">
-                    <header>
-                        <div class="todolist-header-items">
-                            <input type="text" class="text-input w-f"
-                            placeholder="Please enter todo...." onkeyup="addTodoOnKeyIpHandle();">
-                        </div>
-                        <div class="todolist-header-items">
-                            <button class="btn w-f" onclick="addTodoButtonOnClickHandle()">
-                                추가
-                            </button>
-                        </div>
-                    </header>
-                  <ul class="todolist-main-container">
-                            <!-- <li class="todolist-items">
-                                <div class="item-left">
-                                    <input type="checkbox" id="complet-chkbox1" class="complet-chkboxs">
-                                    <label for=""></label>
-                                </div>
-                                <div class="item-center">
-                                    <pre class="todolist-contents"> 오늘 할 일을 출력합니다.</pre>
-                                    <input class="text-input w-f modofiy-content invisible">
-                                </div>
-                                <div class="item-right">
-                                    <p class="todolist-date">2023-08-03</p>
-                                    <div class="todolist-item-buttons">
-                                        <button class="btn btn-edit" onclick="modifyTodoOnClickHandle(this);">수정</button>
-                                        <button class="btn btn-remove" onclick="deleteTodoOnClickHandle(this);">삭제</button>
-                                    </div>
-                                </div>
-                            </li> -->
-                        </ul>
-                </div>
+                    <div class="todolist-addlist-container">
+                        <input type="text" class="text-input todolist-text-area" placeholder="일정을 입력하세요.">
+                        <input type="date" class="addlist-dateselector">
+                        <button class="btn todolist-add-button" onclick="addTodolistOnClickHandle()">추 가</button>
+                    </div>    
 
-            </main> <!--main-container -->
+
+                    <div class="todolist-items-container">
+                        <div class="todolist-header-container">
+                            <div class="todolist-header-left">
+                                <p class="todolist-header">나의 일정</p>
+                            </div>
+
+                            <div class="todolist-header-right">
+                                <p class="radios-head">Filter</p>
+                                <div class="todolist-radios">
+                                    <input type="radio" name="is-finish-radio" class="todolist-radio" checked onclick="radioFilterOnClickHandle();">모든 일정</input>
+                                    <input type="radio" name="is-finish-radio" class="todolist-radio" value="finished" onclick="radioFilterOnClickHandle();">완료</input>
+                                    <input type="radio" name="is-finish-radio" class="todolist-radio" value="not-finished" onclick="radioFilterOnClickHandle();">미완료</input>
+                                </div>
+                            </div>                        
+                        </div>
+                        <div class="todolist-items">
+                        </div>
+                    </div>
+                </div>
+                <div class="calendar-page-container invisible">
+                    <div class="calendar-header">                                                 
+                        <p class="calendar-title">Calendar</p>                          
+                    </div>
+
+                    <div class="calendar-year-and-month">
+                        <div class="calendar-ym-position">
+                            <button class="btn" onclick="calendarLeftButtonOnClickHandle();">◀</button>
+                            <p class="calendar-year"></p><p class="calendar-ym-text">년</p>
+                            <p class="calendar-month"></p><p class="calendar-ym-text">월</p>
+                            <button class="btn" onclick="calendarRightButtonOnClickHandle();">▶</button>
+                        </div>
+                    </div>
+
+                    <div class="calendar-main">
+                        <table class="calendar-table">
+                        </table>
+                    </div>
+    
+                </div>
+            </main> <!-- main -->
+            <div class="modal invisible">               
+            </div> <!-- modal -->
             
-            <div class="modal invisible">
-                <div class="modal-container">
-                    <header class="modal-header">
-                        <h1 class="modal-title">
-                            제목
-                        </h1>
-                    </header>
-                    <main class="modal-main">
-                        <p class="modal-message">
-                            메세지 내용
-                        </p>
-                        <input type="text" class="text-input w-f">
-                    </main>
-                    <footer class="modal-footer">
-                        <button class="btn">확인</button>
-                        <button class="btn">닫기</button>
-                    </footer>
-                </div>
-            </div>
-        </div> <!--container -->
-    </div> <!--root-->
+        </div><!-- container  -->
 
 
-    <script src="./js/index.js"></script>
-    <script src="./js/utils.js"></script>
-    <script src="./js/routes.js"></script>
-    <script src="./js/sidebar.js"></script>
-    <script src="./js/welcome.js"></script>
-    <script src="./js/todolist.js"></script>
-    <script src="./js/modal.js"></script>
+
+        <script src="./js/routes.js"></script>
+        <script src="./js/index.js"></script>
+        <script src="./js/sidebar.js"></script>
+        <script src="./js/welcome.js"></script>
+        <script src="./js/calendar.js"></script>
+        <script src="./js/todolist.js"></script>
+        <script src="./js/modal.js"></script>
+    </div> <!-- root  -->
 </body>
 </html>
